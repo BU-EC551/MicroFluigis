@@ -41,18 +41,19 @@ The script requires the following directory structure:
 
 *\Tcl*
 - This folder should contain all subscripts invoked by `design_complete.tcl`. **DO NOT MODIFY THESE SCRIPTS UNLESS YOU REALLY KNOW WHAT YOU'RE DOING!!** These scripts include:
-  -design_utils.tcl
-  -eco_utils.tcl
-  -hd_floorplan_utils.tcl
-  -impl.tcl
-  -impl_utils.tcl
-  -log.tcl
-  -ooc_impl.tcl
-  -pr_impl.tcl
-  -run.tcl
-  -step.tcl
-  -synth.tcl
-  -synth_utils.tcl
+
+  - design\_utils.tcl
+  - eco\_utils.tcl
+  - hd\_floorplan\_utils.tcl
+  - impl.tcl
+  - impl\_utils.tcl
+  - log.tcl
+  - ooc\_impl.tcl
+  - pr\_impl.tcl
+  - run.tcl
+  - step.tcl
+  - synth.tcl
+  - synth\_utils.tcl
 
 #### Changing Hardware Target
 
@@ -67,20 +68,22 @@ set speed        "-1"
 set part         $device$package$speed
 ```
 
-#### File naming
-- The default name for the top-level module is `top.v`. This can be easily modified by changing the modifying one line of code, found below:
+#### File Naming
+
+##### Top-Level Module
+- The default name for the top-level module is `top.v`. This can be easily modified though one line of code, found below:
 
 ```
 set top "top"
 ```
 
-- Changing the names of variants and reconfigurable partitions
-  - Reconfigurable partitions are established in the top-level module
-  - This is accomplished by instantiating an instance of a module specified in the `design\_complete.tcl` script.
-    - Example:
+##### Reconfigurable Partitions
+- A naming scheme for all reconfigurable partitions is established in the top-level module
+- This is accomplished by instantiating an instance of a module specified in the `design_complete.tcl` script.
+  - Example:
 
 ```
-#design\_complete.tcl
+#design_complete.tcl
 ####################################################################
 ### RP Module Definitions
 ####################################################################
