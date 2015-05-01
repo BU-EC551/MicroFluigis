@@ -164,7 +164,7 @@ set run.writeBitstream 1
 - Receiving control signal from **SW[1]=clear**, **SW[2]=start**, **SW[3]=continue display** 
 - State will go through:
 
-**stateIdle -> stateDisplay -> stateWaitRun -> stateWaitSS -> stateFinished ->(go back to stateIdle when posedge@start OR highlevel@continue_display ) **
+**stateIdle -> stateDisplay -> stateWaitRun -> stateWaitSS -> stateFinished ->(go back to stateIdle when posedge@start** OR **highlevel@continue_display)**
 
 OR 
 
