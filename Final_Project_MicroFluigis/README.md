@@ -74,10 +74,11 @@ set part         $device$package$speed
 set top "top"
 ```
 
--Changing the names of variants and reconfigurable partitions
+- Changing the names of variants and reconfigurable partitions
   - Reconfigurable partitions are established in the top-level module
   - This is accomplished by instantiating an instance of a module specified in the `design\_complete.tcl` script.
     - Example:
+
 ```
 #design\_complete.tcl
 ####################################################################
@@ -92,6 +93,7 @@ set variant $module1_variant1
 
 set module1_inst "inst_shift"
 ```
+
     - The reconfigurable partition "_shift_" would be instantiated in the `top.v` file by instantiating a "_shift_" module with an instance name of "_inst\_shift_" like so:
 
 ```verilog
@@ -133,7 +135,7 @@ set run.writeBitstream 1
 - Digilent PmodCLS
 - RGB Color Sensor
 
-## Hardware Connection
+## Hardware Connections
 - Green Tx line from color sensor is connected to port K17 and N17 (JC[1] and JC[3]), simulating two color sensors
 - Color sensor red VCC line takes 3.3V
 - Jumper (JP2) on PmodCLS should be set to 011 (0 meaning short, 1 meaning open) to work in SPI mode
@@ -151,10 +153,12 @@ set run.writeBitstream 1
   - command\_lookup.v
   - master\_interface.v
   - spi\_interface.v
+
 #### command\_lookup.v
 - Data from color sensors are transferred to “**reg [7:0] command[0:45]” via “wire [7:0] RxD_data”** in top module
 - There are two logic sections handling the process of data buffering
 - The buffer (**reg [7:0] command[0:45]**) contains both format control and data. If the size of it changes, the iteration “**count_sel**” in “**stateWaitRun**” in master_interface.v also need to be changed accordingly
+
 #### master_interface.v
 - A finite state machine looping through the buffer in command_lookup.v and transfer the data to spi_interface.v through send_data.
 - Receiving control signal from **SW[1]=clear**, **SW[2]=start**, **SW[3]=continue display** 
