@@ -103,10 +103,10 @@ set module1_inst "inst_shift"
 \\top.v
 \\ instantiate RP shift
 shift inst_shift (
-	en	(rst),
-	clk	(gclk),
-	addr	(count[34:23]),
-	data_out (shift_out)
+	en		(rst),
+	clk		(gclk),
+	addr		(count[34:23]),
+	data_out 	(shift_out)
 );
 ```
 
