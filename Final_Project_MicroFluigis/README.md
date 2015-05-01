@@ -163,9 +163,13 @@ set run.writeBitstream 1
 - A finite state machine looping through the buffer in command_lookup.v and transfer the data to spi_interface.v through send_data.
 - Receiving control signal from **SW[1]=clear**, **SW[2]=start**, **SW[3]=continue display** 
 - State will go through:
-**stateIdle -> stateDisplay -> stateWaitRun -> stateWaitSS -> stateFinished ->(go back to stateIdle when posedge@start OR highlevel@continue_display ) 
+
+**stateIdle -> stateDisplay -> stateWaitRun -> stateWaitSS -> stateFinished ->(go back to stateIdle when posedge@start OR highlevel@continue_display ) **
+
 OR 
-stateIdle -> stateClearing -> stateWaitRun -> stateWaitSS -> stateFinished ->
+
+**stateIdle -> stateClearing -> stateWaitRun -> stateWaitSS -> stateFinished ->**
+
 #### spi_interface.v
 - Unchanged from basecode
 - Send data to LCD using through SPI
