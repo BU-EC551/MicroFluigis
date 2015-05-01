@@ -97,7 +97,7 @@ set variant $module1_variant1
 set module1_inst "inst_shift"
 ```
 
-    - The reconfigurable partition "_shift_" would be instantiated in the `top.v` file by instantiating a "_shift_" module with an instance name of "_inst\_shift_" like so:
+- The reconfigurable partition "_shift_" would be instantiated in the `top.v` file by instantiating a "_shift_" module with an instance name of "_inst\_shift_" like so:
 
 ```verilog
 \\top.v
