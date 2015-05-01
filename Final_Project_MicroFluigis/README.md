@@ -19,7 +19,7 @@ This script was designed in accordance with Xilinx User's Guide 947: Partial Rec
   - The script ships with the variant of the Xilinx Artix-7 family on the Digilent Basys3 as the default, but it can be easily modified
 
 ####File System Hierarchy
-The script requires the following directory structure:
+The script requires the directory structure oulined below. A populated file structure is provided in the "_Partial\_Reconfiguration" directory. Note that a file called "_file_" exists in what should be empty directories, as github will not allow committing empty directories.
 
 *\Bitstreams*
 - Create this folder and leave it empty. This is where you will find your bitstreams once the script has run
